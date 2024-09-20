@@ -36,7 +36,11 @@ const RepoSection = ({
                 <option value="asc">Ascending</option>
             </select>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 justify-between">
+        <div
+            className={`grid grid-cols-1 gap-4 justify-between ${
+                selectedRepo ? "md:grid-cols-2" : "md:grid-cols-1"
+            }`}
+        >
             <div>
                 <h2 className="text-2xl mb-5">
                     Top Repositories by{" "}
