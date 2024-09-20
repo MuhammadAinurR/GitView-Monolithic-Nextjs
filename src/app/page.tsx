@@ -34,7 +34,7 @@ const Home = () => {
         setRepos(repoData);
         setSearchTitle(org);
         setIsRepoLoading(false);
-        setMainLoading(false);
+        setMainLoading(true);
     };
 
     const getCommits = async (repoName: string) => {
@@ -59,7 +59,9 @@ const Home = () => {
     return (
         <div className="p-[2rem]">
             {mainLoading === true ? (
-                <p>Loading...</p>
+                <div className="h-screen w-screen flex justify-center items-center text-2xl md:text-5xl">
+                    Loading...
+                </div>
             ) : (
                 <>
                     <Header />
