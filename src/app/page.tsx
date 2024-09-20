@@ -34,7 +34,7 @@ const Home = () => {
         setRepos(repoData);
         setSearchTitle(org);
         setIsRepoLoading(false);
-        setMainLoading(true);
+        setMainLoading(false);
     };
 
     const getCommits = async (repoName: string) => {
