@@ -1,8 +1,17 @@
 # GitView Monolithic Next.js
 
+![img_preview](/assets/preview.gif)
+
 ### Check this apps now!
 
 [https://github-view.ainurrofiq.site](https://github-view.ainurrofiq.site)
+
+## Features
+
+-   **Fetch Repositories:** Search for repositories by organization name.
+-   **Sort Repositories:** Sort repositories by various criteria such as name and order.
+-   **View Commits:** View recent commits for a selected repository.
+-   **Error Handling:** Displays error messages for invalid organization names.
 
 ## Getting Started
 
@@ -36,13 +45,6 @@ npm run dev
 ### 5. Open the App
 
 Open your browser and navigate to [http://localhost:3000](http://localhost:3000)
-
-## Features
-
--   **Fetch Repositories:** Search for repositories by organization name.
--   **Sort Repositories:** Sort repositories by various criteria such as name and order.
--   **View Commits:** View recent commits for a selected repository.
--   **Error Handling:** Displays error messages for invalid organization names.
 
 ## Manual Tests
 
