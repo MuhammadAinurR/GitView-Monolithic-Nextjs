@@ -34,6 +34,7 @@ const Home = () => {
         setRepos(repoData);
         setSearchTitle(org);
         setIsRepoLoading(false);
+        setMainLoading(false);
     };
 
     const getCommits = async (repoName: string) => {
@@ -46,7 +47,6 @@ const Home = () => {
 
     useEffect(() => {
         getRepos(sortBy.sort, sortBy.direction);
-        setMainLoading(false);
     }, [sortBy]);
 
     const handleOrgChange = (e: React.ChangeEvent<HTMLInputElement>) =>
@@ -58,7 +58,7 @@ const Home = () => {
 
     return (
         <div className="p-[2rem]">
-            {mainLoading ? (
+            {mainLoading === true ? (
                 <p>Loading...</p>
             ) : (
                 <>
