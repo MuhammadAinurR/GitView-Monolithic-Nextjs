@@ -56,36 +56,42 @@ const Home = () => {
     const handleDirectionChange = (e: React.ChangeEvent<HTMLSelectElement>) =>
         setSortBy({ ...sortBy, direction: e.target.value });
 
-    if (mainLoading === false)
-        return (
-            <div className="p-[2rem]">
-                <Header />
-                <SearchBar
-                    org={org}
-                    onOrgChange={handleOrgChange}
-                    onSearch={() => getRepos(sortBy.sort, sortBy.direction)}
-                />
-                {repos.length ? (
-                    <RepoSection
-                        searchTitle={searchTitle}
-                        sortBy={sortBy}
-                        onSortChange={handleSortChange}
-                        onDirectionChange={handleDirectionChange}
-                        repos={repos}
-                        isRepoLoading={isRepoLoading}
-                        getCommits={getCommits}
-                        selectedRepo={selectedRepo}
-                        commits={commits}
-                        isCommitLoading={isCommitLoading}
+    return (
+        <div className="p-[2rem]">
+            {mainLoading ? (
+                <p>Loading...</p>
+            ) : (
+                <>
+                    <Header />
+                    <SearchBar
+                        org={org}
+                        onOrgChange={handleOrgChange}
+                        onSearch={() => getRepos(sortBy.sort, sortBy.direction)}
                     />
-                ) : (
-                    <p className="text-center font-bold text-2xl p-5">
-                        Organization not found
-                    </p>
-                )}
-                <ToastContainer />
-            </div>
-        );
+                    {repos.length ? (
+                        <RepoSection
+                            searchTitle={searchTitle}
+                            sortBy={sortBy}
+                            onSortChange={handleSortChange}
+                            onDirectionChange={handleDirectionChange}
+                            repos={repos}
+                            isRepoLoading={isRepoLoading}
+                            getCommits={getCommits}
+                            selectedRepo={selectedRepo}
+                            commits={commits}
+                            isCommitLoading={isCommitLoading}
+                        />
+                    ) : (
+                        <p className="text-center font-bold text-2xl p-5">
+                            Organization not found
+                        </p>
+                    )}
+                </>
+            )}
+
+            <ToastContainer />
+        </div>
+    );
 };
 
 export default Home;
