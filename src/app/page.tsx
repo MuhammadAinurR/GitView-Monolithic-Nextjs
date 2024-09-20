@@ -7,12 +7,12 @@ import "react-toastify/dist/ReactToastify.css";
 import { fetchOrgRepos, fetchRepoCommits } from "../../services/githubService";
 import { ToastContainer, toast } from "react-toastify";
 import { useEffect, useState } from "react";
-import { SortByType } from "@/types";
+import { CommitType, RepoType, SortByType } from "@/types";
 
 const Home = () => {
     const [org, setOrg] = useState<string>("apache");
-    const [repos, setRepos] = useState<any[]>([]);
-    const [commits, setCommits] = useState<any[]>([]);
+    const [repos, setRepos] = useState<RepoType[]>([]);
+    const [commits, setCommits] = useState<CommitType[]>([]);
     const [selectedRepo, setSelectedRepo] = useState<string | null>(null);
     const [searchTitle, setSearchTitle] = useState<string>("");
     const [isRepoLoading, setIsRepoLoading] = useState<boolean>(false);

@@ -67,8 +67,8 @@ const RepoSection = ({
                     {isCommitLoading ? (
                         <p>Loading...</p>
                     ) : commits.length ? (
-                        commits.map((commit) => (
-                            <CommitCard commit={commit} key={commit.sha} />
+                        commits.map((commit, idx) => (
+                            <CommitCard commit={commit} key={idx} />
                         ))
                     ) : (
                         <p>No Repo Data</p>

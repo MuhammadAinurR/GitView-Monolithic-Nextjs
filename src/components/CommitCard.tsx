@@ -1,4 +1,5 @@
 import { CommitCardPropsType } from "@/types";
+import Image from "next/image";
 import React from "react";
 
 const CommitCard: React.FC<CommitCardPropsType> = ({ commit }) => {
@@ -10,10 +11,12 @@ const CommitCard: React.FC<CommitCardPropsType> = ({ commit }) => {
             <p className="font-bold">{message}</p>
             <div className="flex gap-2 items-center mt-2">
                 {avatarUrl && (
-                    <img
+                    <Image
                         className="w-[20px] h-[20px] rounded-full bg-white"
                         src={avatarUrl}
                         alt={`${author.name}'s avatar`}
+                        width={20}
+                        height={20}
                     />
                 )}
                 <p className="text-[#8E959E] text-sm items-center content-center align-middle h-full">

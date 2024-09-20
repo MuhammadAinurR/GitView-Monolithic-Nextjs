@@ -28,11 +28,11 @@ export interface RepoSectionPropsType {
     sortBy: SortByType;
     onSortChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
     onDirectionChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
-    repos: any[];
+    repos: RepoType[];
     isRepoLoading: boolean;
     getCommits: (repoName: string) => void;
     selectedRepo: string | null;
-    commits: any[];
+    commits: CommitType[];
     isCommitLoading: boolean;
 }
 
