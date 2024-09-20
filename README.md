@@ -1,7 +1,5 @@
 # GitView Monolithic Next.js
 
-## Demo Link
-
 ### Check this apps now!
 
 [https://github-view.ainurrofiq.site](https://github-view.ainurrofiq.site)
